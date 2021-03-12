@@ -1,24 +1,24 @@
-const request = require('request');  //Step 1
-const breed = process.argv[2];   //
+const request = require('request');
+const breed = process.argv[2];
 
 let URL = `https://api.thecatapi.com/v1/breeds/search?q=${breed}`;
 
 const requestCallback = function (error, response, body) {
-    // console.log(body); - to see what is returning
+
     
     if (error) {
       console.log('Error');
-      return; //stop excecution 
+      return; 
     }
 
-    const data = JSON.parse(body);// deserialization by parsing to convert the string into an object using JSON.parse
+    const data = JSON.parse(body);
     // console.log(data);
 
-    console.log(typeof data); //typeof would now tell us that data is an object.
+    console.log(typeof data); 
 
     if (!data.length) {
       console.log("Not found");
-      return; //stop excecution 
+      return;  
     }
 
     const breed = data[0];
@@ -26,8 +26,8 @@ const requestCallback = function (error, response, body) {
 
 };
 
-//Step 4
-request(URL,requestCallback);   //2 parms for request
+
+request(URL,requestCallback);  
 
 
 
