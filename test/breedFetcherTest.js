@@ -20,7 +20,7 @@ describe('fetchBreedDescription', () => {
 
 
   it('returns no description found via callback', (done) => {
-    fetchBreedDescription('', (err, desc) => {                //No Breedname Provided.
+    fetchBreedDescription('', (err, desc) => {                //No breedName Provided.
       // we expect no error but no description return.
       assert.equal(err, null);
 
@@ -35,7 +35,7 @@ describe('fetchBreedDescription', () => {
 
 
   it('returns no description found via callback', (done) => {
-    fetchBreedDescription('GrumpyCat', (err, desc) => {        //Breedname doesn't exit. 
+    fetchBreedDescription('GrumpyCat', (err, desc) => {        //breedName doesn't exit. 
       // we expect no error but no description return.
       assert.equal(err, null);
 
@@ -47,6 +47,6 @@ describe('fetchBreedDescription', () => {
       done();
     });
   });
-  
+
 });
 
